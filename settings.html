@@ -1,84 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/whitebox2.icon">
-    <title>whitebox webpage</title>
-  </head>
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <img
-              src="https://live.staticflickr.com/65535/51778992943_48ea81c345.jpg"
-              alt="whitebox"
-            />
-          </li>
-          <li><a href="\index.html">Inicio</a></li>
-          <li><input type="search" /></li>
-          <li><a href="\settings.html">Configuracion</a></li>
-          <li><a href="\account.html">Mi cuenta</a></li>
-          <li><a href="#Contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
-   <section> <ul>
-      <h1>Configuraciones</h1>
-        <li><h3><b>Tema visual</b></h3></li>
-        <form>
-          <input type="radio" value="Oscuro" />
-          <label for="Oscuro">Dark</label> <br>
-          <input type="radio" value="Claro" />
-          <label for="Claro">Light</label><br>
-          <input type="radio" value="Segun tu sistema operativo xd" />
-          <label for="Segun tu sistema operativo xd">Accordingly to your OS</label>
-        </form>
-        <li><h3><b>Idioma</b></h3></li>
-        <form>
-          <input type="radio" value="Esp" />
-          <label for="Esp">Castellano</label> <br>
-          <input type="radio" value="Eng" />
-          <label for="Eng">English</label><br>
-          <input type="radio" value="Jp" />
-          <label for="Jp">Nihon</label>
-        </form>
-       <li> <h3><b>Notificaciones</b></h3></li>
-        <form>
-          <input type="radio" value="Todo" />
-          <label for="Todo">Quiero recibir la mayoria</label> <br>
-          <input type="radio" value="Algunas" />
-          <label for="Algunas">Quiero recibir solo lo importante</label><br>
-          <input type="radio" value="Nada" />
-          <label for="Nada">No quiero recibir notificaciones</label>
-        </form>
-    </ul>
-</section>
-    <footer>
-      <h4 id= Contacto>Contacto</h4>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/whitebox2.icon" />
+  <link rel="stylesheet" href="basic.css" />
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/4861ebc1d2.js" crossorigin="anonymous"></script>
+  <title>whitebox webpage</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
       <ul>
         <li>
-          <a href="https://github.com/whitebox-gmc" target="_blank">Github</a>
+          <img src="https://live.staticflickr.com/65535/51778992943_48ea81c345.jpg" alt="whitebox" id="logo" />
         </li>
-        <li>
-          <a
-            href="mailto:gmmc.96@hotmail.com"
-            subject="Este%20es%20un%20mail%20de%20prueba"
-            target="_blank"
-            >e-mail</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/guillermo-martinez-cabrera"
-            target="_blank"
-            >LinkedIn</a
-          >
-        </li>
+        <li><i class="fas fa-home"></i><a id="inicio" href="\index.html">Inicio</a></li>
+        <li><i class="fas fa-search"></i><input id="buscador" type="search" placeholder=" Buscar" /></li>
+        <li><i class="fas fa-cogs"></i><a id="config" href="\settings.html">Configuracion</a></li>
+        <li><i class="fas fa-user-circle"></i><a id="cuenta" href="\account.html">Mi cuenta</a></li>
+        <li><i class="fas fa-hashtag"></i><a id="contacto" href="#Contacto">Contacto</a></li>
       </ul>
-    </footer>
-  </body>
+    </nav>
+    <nav class="responsive-navbar">
+      <div id="responsive-navbar__button"><i class="fas fa-bars"></i></div>
+      <ul class="responsive-navbar__ul">
+        <li><i class="fas fa-home"></i><a id="inicio" href="\index.html">Inicio</a></li>
+        <li><i class="fas fa-search"></i><input id="responsive-buscador" type="search" placeholder=" Buscar" /></li>
+        <li><i class="fas fa-cogs"></i><a id="config" href="\settings.html">Configuracion</a></li>
+        <li><i class="fas fa-user-circle"></i><a id="cuenta" href="\account.html">Mi cuenta</a></li>
+        <li><i class="fas fa-hashtag"></i><a id="contacto" href="#Contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id=seccion__config>
+    <h1 id="tituloConfig">Configuraciones</h1>
+
+    <form>
+
+      <h3 class="subtitularesConfig">Tema visual:</h3>
+
+
+      <input type="radio" value="Oscuro" name="SO" />
+      <label for="Oscuro" class="opcionConfig">Dark</label> <br />
+      <input type="radio" value="Claro" name="SO" />
+      <label for="Claro" class="opcionConfig">Light</label><br />
+      <input type="radio" value="Segun tu sistema operativo xd" name="SO" />
+      <label for="Segun tu sistema operativo xd" class="opcionConfig">Accordingly to your OS</label>
+
+
+      <h3 class="subtitularesConfig">Idioma:</h3>
+
+
+      <input type="radio" value="Esp" name="Idioma" />
+      <label for="Esp" class="opcionConfig">Castellano</label> <br />
+      <input type="radio" value="Eng" name="Idioma" />
+      <label for="Eng" class="opcionConfig">English</label><br />
+      <input type="radio" value="Jp" name="Idioma" />
+      <label for="Jp" class="opcionConfig">Nihon</label>
+
+
+      <h3 class="subtitularesConfig">Notificaciones:</h3>
+
+
+      <input type="radio" value="Todo" name="Notis" />
+      <label for="Todo" class="opcionConfig">Quiero recibir la mayoria</label>
+      <br />
+      <input type="radio" value="Algunas" name="Notis" />
+      <label for="Algunas" class="opcionConfig">Quiero recibir solo lo importante</label><br />
+      <input type="radio" value="Nada" name="Notis" />
+      <label for="Nada" class="opcionConfig">No quiero recibir notificaciones</label>
+ 
+      <h3 class="subtitularesConfig">Notificaciones:</h3>
+
+
+      <input type="radio" value="Todo" name="Notis" />
+      <label for="Todo" class="opcionConfig">Quiero recibir la mayoria</label>
+      <br />
+      <input type="radio" value="Algunas" name="Notis" />
+      <label for="Algunas" class="opcionConfig">Quiero recibir solo lo importante</label><br />
+      <input type="radio" value="Nada" name="Notis" />
+      <label for="Nada" class="opcionConfig">No quiero recibir notificaciones</label>
+      <h3 class="subtitularesConfig">Notificaciones:</h3>
+
+
+      <input type="radio" value="Todo" name="Notis" />
+      <label for="Todo" class="opcionConfig">Quiero recibir la mayoria</label>
+      <br />
+      <input type="radio" value="Algunas" name="Notis" />
+      <label for="Algunas" class="opcionConfig">Quiero recibir solo lo importante</label><br />
+      <input type="radio" value="Nada" name="Notis" />
+      <label for="Nada" class="opcionConfig">No quiero recibir notificaciones</label>
+      <h3 class="subtitularesConfig">Notificaciones:</h3>
+
+
+      <input type="radio" value="Todo" name="Notis" />
+      <label for="Todo" class="opcionConfig">Quiero recibir la mayoria</label>
+      <br />
+      <input type="radio" value="Algunas" name="Notis" />
+      <label for="Algunas" class="opcionConfig">Quiero recibir solo lo importante</label><br />
+      <input type="radio" value="Nada" name="Notis" />
+      <label for="Nada" class="opcionConfig">No quiero recibir notificaciones</label>
+    </form>
+
+  </section>
+  <footer>
+    <h4 id="agradecimiento">Gracias por visitarnos!</h4>
+    <p class="formulario">Que te parecio la pagina? (Del 1 al 10)</p>
+    <form>
+      <input id="slider" type="range" min="1" max="10" />
+    </form>
+    <p class="formulario">Dejanos un comentario, no seas raton</p>
+    <form>
+      <input
+        id="comentario"
+        type="text"
+        minlength="50"
+        maxlength="300"
+        placeholder="Comenta en este sitio"
+      />
+      <input id="boton" type="button" value="Confirmar" />
+    </form>
+    <h4 id="Contacto">Contacto</h4>
+    <ul id="listaRedes">
+      <li>
+        <a href="https://github.com/whitebox-gmc" target="_blank">Github</a>
+      </li>
+      <li>
+        <a
+          href="mailto:gmmc.96@hotmail.com"
+          subject="Este%20es%20un%20mail%20de%20prueba"
+          target="_blank"
+          >e-mail</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/guillermo-martinez-cabrera"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </li>
+    </ul>
+  </footer>
+</body>
+
 </html>
