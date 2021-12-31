@@ -19,7 +19,7 @@ body {
   overflow: hidden;
   display: none;
 }
-#responsive-navbar__button {
+.responsive-navbar__button {
   font-size: 40px;
   background-color: #778ebb;
   padding: 10px;
@@ -30,18 +30,50 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-  
   .navbar {
     display: none;
   }
   .responsive-navbar {
     display: block;
   }
+  /* Usando el navbar */
+  /* .responsive-navbar ul {
+    display: none;
+  }
+  .responsive-navbar:hover ul {
+    display: block;
+  } */
+
+  /* Usando el button */
+  /* .responsive-navbar__button + ul {
+    display: none;
+  }
+  .responsive-navbar__button:hover + ul {
+    display: block;
+  }
+  .responsive-navbar__ul:hover {
+    display: block;
+  } */
+
   .responsive-navbar__ul {
-    margin-top: 10px;
+    overflow: hidden;
+    transition: all 0.7s;
+  }
+
+  .responsive-navbar__button + ul {
+    height: 0px;
+  }
+
+  .responsive-navbar__button:hover + ul, .responsive-navbar__ul:hover{
+    height: 250px;
+    padding-top: 10px;
   }
 
   .responsive-navbar__ul li {
+    display: none;
+  }
+
+  .responsive-navbar__ul:hover li,  .responsive-navbar__button:hover + ul>li{
     text-align: left;
     display: block;
     margin-left: 5px;
