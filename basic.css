@@ -1,6 +1,6 @@
 * {
   font-family: "Nunito", sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 body {
@@ -11,26 +11,19 @@ body {
 
 .responsive-navbar {
   width: 100%;
-  height: fit-content;
   background-color: #a5b3cf;
   box-shadow: 0px 2px 10px rgb(0, 0, 0);
   position: fixed;
-  top: 0px;
+  top: 0rem;
   overflow: hidden;
   display: none;
 }
-#responsive-navbar__button {
-  font-size: 40px;
+.responsive-navbar__button {
   background-color: #778ebb;
-  padding: 10px;
-  margin-left: 0px;
-  position: relative;
-  height: 70px;
-  width: 100%;
+  padding: 1rem;
 }
 
-@media only screen and (max-width: 500px) {
-  
+@media only screen and (max-width: 750px) {
   .navbar {
     display: none;
   }
@@ -38,15 +31,20 @@ body {
     display: block;
   }
   .responsive-navbar__ul {
-    margin-top: 10px;
+    transition: 0.3s;
+  }
+  .responsive-navbar__button + ul {
+    height: 0rem;
   }
 
+  .responsive-navbar__button:hover + ul,
+  .responsive-navbar__ul:hover {
+    height: 250px;
+    padding-top: 1rem;
+  }
   .responsive-navbar__ul li {
-    text-align: left;
     display: block;
-    margin-left: 5px;
-    width: 100%;
-    padding: 12px;
+    padding: 0.65rem;
   }
 
   #responsive-buscador {
@@ -71,6 +69,16 @@ body {
     padding-left: 5px;
     outline: rgb(116, 116, 224);
   }
+
+  li:hover > a {
+    color: rgb(116, 116, 224);
+    background-color: rgb(235, 231, 240);
+    border-radius: 25px;
+  }
+  li:hover > i {
+    color: rgb(116, 116, 224);
+    border-radius: 25px;
+  }
 }
 
 .navbar {
@@ -91,7 +99,7 @@ ul li {
 li a {
   color: rgb(42, 42, 53);
   text-decoration: none;
-  font-size: 20px;
+  font-size: clamp(12px, 20px , 24px);
   padding: 5px;
   transition: color 0.15s, background-color 0.15s, border-radius 0.15s,
     padding-left 0.15s, padding-right 0.15s;
@@ -106,7 +114,7 @@ li:hover > a {
 li i {
   color: rgb(42, 42, 53);
   width: 30px;
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 li:hover > i {
   color: rgb(116, 116, 224);
@@ -142,6 +150,50 @@ li:hover > i {
   outline: rgb(116, 116, 224);
 }
 
+@media only screen and (max-width: 1131px) {
+  li a {
+    color: rgb(42, 42, 53);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 4px;
+    transition: color 0.15s, background-color 0.15s, border-radius 0.15s,
+      padding-left 0.15s, padding-right 0.15s;
+  }
+
+  ul li {
+    display: inline;
+    padding: 15px;
+    vertical-align: middle;
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 867px) {
+  li a {
+    color: rgb(42, 42, 53);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 4px;
+    transition: color 0.15s, background-color 0.15s, border-radius 0.15s,
+      padding-left 0.15s, padding-right 0.15s;
+  }
+
+  ul li {
+    display: inline;
+    padding: 6px;
+    vertical-align: middle;
+    font-size: 8px;
+  }
+  #buscador {
+    width: 20vw;
+    height: 28px;
+    border: 2px solid rgb(42, 42, 53);
+    border-radius: 10px;
+    font-size: 2em;
+    color: rgb(42, 42, 53);
+    background-color: rgb(235, 231, 240);
+    padding-left: 5px;
+  }
+}
 /*INDEX ARTICLE STARTS HERE*/
 
 article {
@@ -160,6 +212,7 @@ article {
   margin-top: 120px;
   outline: 3px rgb(56, 45, 66) solid;
   border-radius: 10px;
+  background-color: rgb(224, 224, 224);
 }
 
 .section-flex-item {
@@ -168,11 +221,11 @@ article {
 }
 
 #titular {
-  font-size: 30px;
+  font-size: clamp(18px, 30px , 350px);
   color: rgb(116, 116, 224);
   border: 3px solid rgb(42, 42, 53);
   border-radius: 50px;
-  background-color: rgb(238, 230, 248);
+  background-color: rgb(225 236 255);
   margin-top: 20px;
 }
 
@@ -190,7 +243,7 @@ article {
   color: rgb(116, 116, 224);
   border: 3px solid rgb(42, 42, 53);
   border-radius: 50px;
-  background-color: rgb(238, 230, 248);
+  background-color: rgb(225 236 255);
   margin-top: 20px;
 }
 
@@ -232,6 +285,7 @@ iframe {
   outline: 3px rgb(56, 45, 66) solid;
   border-radius: 10px;
   padding: 10px;
+  background-color: rgb(224, 224, 224);
 }
 .aside-flex-item {
   text-align: center;
@@ -279,6 +333,7 @@ footer {
   outline: 3px rgb(56, 45, 66) solid;
   border-radius: 10px;
   padding: 10px;
+  background-color: rgb(224, 224, 224);
 }
 
 #agradecimiento {
@@ -321,6 +376,7 @@ footer {
   border-radius: 10px;
   padding: 10px;
   width: 25%;
+  background-color: rgb(224, 224, 224);
 }
 
 #tituloConfig {
@@ -330,7 +386,7 @@ footer {
   border: 3px solid rgb(42, 42, 53);
   border-radius: 50px;
   padding: 7px 20px;
-  background-color: rgb(238, 230, 248);
+  background-color: rgb(225 236 255);
 }
 
 .subtitularesConfig {
@@ -376,7 +432,7 @@ input[type="radio"]:checked:after {
   border: 3px solid rgb(42, 42, 53);
   border-radius: 50px;
   padding: 7px 20px;
-  background-color: rgb(238, 230, 248);
+  background-color: rgb(225 236 255);
 }
 
 #datazos {
@@ -388,6 +444,7 @@ input[type="radio"]:checked:after {
   padding: 10px;
   width: 25%;
   border-radius: 10px;
+  background-color: rgb(224, 224, 224);
 }
 
 .parametros {
@@ -421,5 +478,5 @@ input[type="radio"]:checked:after {
   font-weight: 1000;
   border-radius: 20px;
   border-color: rgb(33, 33, 54);
-  background-color: rgb(238, 230, 248);
+  background-color: rgb(225 236 255);
 }
